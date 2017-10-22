@@ -5,6 +5,7 @@
 #include <cstdint>
 #include <cstdlib>
 #include "x86intrin.h"
+#include "bitpacking.h"
 
 #define D 64
 #define N 64

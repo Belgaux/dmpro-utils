@@ -20,10 +20,15 @@ def FC_time(freq, word_size, cols, lhs_rows, rhs_rows,
   t = freq * cycles_per_channel
   return t
 
-f = 1/(100*10**6) # 100MHz
-for i in range(1, 8):
-  a = FC_time(freq=f, word_size=64, cols=1024, lhs_rows=128, rhs_rows=1,
-    lhs_bits=i, rhs_bits=1, chn=1)
-  print(a)
+f = 1/(50*10**6) # 50MHz
+a = FC_time(freq=f, word_size=64, cols=1024, lhs_rows=256, rhs_rows=1,
+  lhs_bits=1, rhs_bits=1, chn=3)
+print("bit_depths=(1,1) -> ", a)
+
+a = FC_time(freq=f, word_size=64, cols=1024, lhs_rows=256, rhs_rows=1,
+  lhs_bits=2, rhs_bits=2, chn=3)
+print("bit_depths=(2,2) -> ", a)
+
+
 
 
